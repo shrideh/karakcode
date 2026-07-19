@@ -1,0 +1,41 @@
+[project]
+name = "karakcode"
+version = "0.1.0"
+description = "KarakCode هو اسم يجمع بين الأصالة والابتكار؛ فهو يمثل حلولًا برمجية تُبنى بإتقان، مستلهمة من صلابة الكرك وتاريخها، وموجهة لخدمة العملاء محليًا وعالميًا."
+authors = [
+    {name = "wsl-pc",email = "dev@mws.per.jo"}
+]
+license = "LicenseRef-Proprietary"
+license-files = ["LICENSE"]
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "django (>=6.0.6,<7.0.0)",
+    "gunicorn (>=26.0.0,<27.0.0)",
+    "uvicorn (>=0.50.2,<0.51.0)",
+    "celery (>=5.6.3,<6.0.0)",
+    "django-redis (>=7.0.0,<8.0.0)",
+    "django-celery-email (>=3.0.0,<4.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "django-stubs[compatible-mypy] (>=6.0.6,<7.0.0)",
+    "djlint (>=1.40.3,<2.0.0)",
+    "pyrefly (>=1.1.1,<2.0.0)",
+    "django-debug-toolbar (>=7.0.0,<8.0.0)",
+    "bandit (>=1.9.4,<2.0.0)",
+    "django-security-hunter (>=0.5.0,<0.6.0)",
+    "isort (>=8.0.1,<9.0.0)",
+    "pip-licenses (>=5.5.5,<6.0.0)",
+    "celery-types (>=0.26.0,<0.27.0)",
+    "pip-audit (>=2.10.1,<3.0.0)"
+]
+[tool.pyrefly]
+python-platform = "linux"
+search_path = ["."]
+use-ignore-files = true

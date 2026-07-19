@@ -1,0 +1,25 @@
+{
+    "mypy.dmypyExecutable": "/home/admin/karakcode/.venv/bin/dmypy",
+    "commentBox.styles": {
+        "defaultStyle": {
+            "capitalize": false,
+            "ignoreInnerIndentation": false,
+            "ignoreOuterIndentation": false,
+            "removeEmptyLines": true,
+            "textAlignment": "left",
+            "boxWidth": 72,
+            "commentStartToken": "# ",
+            "commentEndToken": " #",
+            "topEdgeToken": "=",
+            "bottomEdgeToken": "=",
+            "leftEdgeToken": "# ",
+            "rightEdgeToken": " #",
+            "topRightToken": " #",
+            "bottomLeftToken": "# ",
+            "fillingToken": " "
+        }
+    },
+    "python.pyrefly.disabledLanguageServices": {
+        "inlayHint": true
+    }
+}
