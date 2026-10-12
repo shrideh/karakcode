@@ -99,6 +99,18 @@ INSTALLED_APPS += [
     'home.apps.HomeConfig',
 ]
 
+
+# ==================================================================== #
+# معرفة جهاز المستخدم  
+
+INSTALLED_APPS += [
+    "django_user_agents",
+]
+MIDDLEWARE += [
+    "django_user_agents.middleware.UserAgentMiddleware",
+]
+USER_AGENTS_CACHE = "default"
+# ==================================================================== #
 # development settings
 if DEBUG:
     INSTALLED_APPS += [

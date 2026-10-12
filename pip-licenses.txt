@@ -1,0 +1,2 @@
+لمعرفة تراخيص الحزم البرمجية مفتوحة المصدر قبل الاستغلال التجاري
+pip-licenses --format=json --output-file=/home/admin/karakcode/reports/pip-licenses.json

@@ -1,0 +1,92 @@
+{
+  "schema_version": "django_security_hunter.report.v1",
+  "tool": {
+    "name": "django_security_hunter",
+    "version": "0.5.0"
+  },
+  "mode": "scan",
+  "generated_at": "2026-07-06T11:14:12.130973+00:00",
+  "metadata": {
+    "project_root": "/home/admin/karakcode",
+    "settings_module": "karakcode.settings",
+    "runner": "django-settings-scan",
+    "django_settings_loaded": true,
+    "integrations": {
+      "pip_audit": {
+        "enabled": false,
+        "status": "skipped"
+      },
+      "bandit": {
+        "enabled": false,
+        "status": "skipped"
+      },
+      "semgrep": {
+        "enabled": false,
+        "status": "skipped"
+      }
+    },
+    "security_score": {
+      "model": "weighted-v1",
+      "score": 40,
+      "max_score": 100,
+      "penalty": 60,
+      "weights": {
+        "INFO": 1,
+        "WARN": 5,
+        "HIGH": 15,
+        "CRITICAL": 40
+      },
+      "counts": {
+        "INFO": 0,
+        "WARN": 1,
+        "HIGH": 1,
+        "CRITICAL": 1
+      }
+    },
+    "security_trend": {
+      "direction": "flat",
+      "delta": 0,
+      "previous_score": null,
+      "weekly_delta": null,
+      "history_file": null
+    }
+  },
+  "findings": [
+    {
+      "rule_id": "DJG001",
+      "severity": "CRITICAL",
+      "title": "DEBUG is enabled",
+      "message": "Django DEBUG=True is unsafe in production: verbose errors leak implementation details and may expose secrets.",
+      "path": null,
+      "line": null,
+      "column": null,
+      "fix_hint": "Use an environment flag and default to False in production.\n\nDEBUG = os.environ.get(\"DJANGO_DEBUG\", \"false\").lower() in (\"1\", \"true\", \"yes\")\n",
+      "tags": [],
+      "references": []
+    },
+    {
+      "rule_id": "DJG003",
+      "severity": "HIGH",
+      "title": "ALLOWED_HOSTS is wildcard or empty",
+      "message": "ALLOWED_HOSTS contains '*', which accepts any Host header and enables HTTP Host header attacks and cache poisoning.",
+      "path": null,
+      "line": null,
+      "column": null,
+      "fix_hint": "List explicit hostnames (and your service domain), e.g.:\n\nALLOWED_HOSTS = [\"api.example.com\", \"www.example.com\"]\n\nDerive from environment in production; never use ['*'] outside local DEBUG.",
+      "tags": [],
+      "references": []
+    },
+    {
+      "rule_id": "DJG074",
+      "severity": "WARN",
+      "title": "Hardcoded secret-like assignment",
+      "message": "Variable 'SECRET_KEY' is assigned a long string literal; may be a committed secret.",
+      "path": "karakcode/env.py",
+      "line": 1,
+      "column": null,
+      "fix_hint": "Load secrets from the environment or a secrets manager.\n",
+      "tags": [],
+      "references": []
+    }
+  ]
+}

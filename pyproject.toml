@@ -15,6 +15,10 @@ dependencies = [
     "celery (>=5.6.3,<6.0.0)",
     "django-redis (>=7.0.0,<8.0.0)",
     "django-celery-email (>=3.0.0,<4.0.0)",
+    "django-user-agents (>=0.4.0,<0.5.0)",
+    "pyyaml (>=6.0.3,<7.0.0)",
+    "ua-parser (>=1.0.2,<2.0.0)",
+    "user-agents (>=2.2.0,<3.0.0)",
 ]
 
 

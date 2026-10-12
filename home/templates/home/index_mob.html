@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <!-- viewport-fit=cover لدعم الشاشات ذات النوتش (iPhone) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="كرك كود — شركة أردنية مفتوحة المصدر تبني مواقع وتطبيقات تجمع أصالة التراث بإتقان التقنية.">
+    <meta name="color-scheme" content="light dark">
+    <meta property="og:title" content="KarakCode | كرك كود">
+    <meta property="og:description" content="تراثٌ يلهمنا… وتقنيةٌ تصنع مستقبلنا.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#FAF5EC">
+    <title>KarakCode | كرك كود — تراثٌ يصنع المستقبل</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect x='12' y='12' width='16' height='16' fill='%23C99B3F' transform='rotate(45,20,20)'/><rect x='12' y='12' width='16' height='16' fill='%23B4601F'/></svg>">
+
+    <!-- منع وميض المظهر الخاطئ (FOUC) — يُنفَّذ قبل الرسم -->
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem('kc-theme'); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+        document.documentElement.classList.add('js');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', t === 'dark' ? '#171209' : '#FAF5EC');
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home_mob.css' %}">
+</head>
+<body>
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى الرئيسي</a>
+
+    <!-- ================= الترويسة العلوية ================= -->
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="#hero" aria-label="كرك كود — الصفحة الرئيسية">
+                <svg class="logo" viewBox="0 0 40 40" aria-hidden="true">
+                    <rect x="12" y="12" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                    <rect x="12" y="12" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" transform="rotate(45 20 20)"/>
+                    <circle cx="20" cy="20" r="4" fill="currentColor"/>
+                </svg>
+                <span>كرك<em>كود</em></span>
+            </a>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" type="button"
+                        aria-pressed="false" aria-label="التبديل بين الوضع الفاتح والداكن">
+                    <svg class="ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4.2"/>
+                        <path d="M12 2.8v2.2M12 19v2.2M2.8 12H5M19 12h2.2M5.4 5.4 7 7M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/>
+                    </svg>
+                    <svg class="ti-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M20.4 14.2A8.4 8.4 0 0 1 9.8 3.6a8.4 8.4 0 1 0 10.6 10.6z"/>
+                    </svg>
+                </button>
+                <a class="btn btn-solid header-cta" href="#contact">ابدأ مشروعك</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- ================= قسم البطل ================= -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="container hero-inner">
+                <div class="arch" aria-hidden="true">
+                    <svg class="rosette" viewBox="0 0 240 240" focusable="false">
+                        <g class="ros-rot-slow">
+                            <rect class="ros1" x="52" y="52" width="136" height="136"/>
+                            <rect class="ros1" x="52" y="52" width="136" height="136" transform="rotate(45 120 120)"/>
+                        </g>
+                        <g class="ros-rot-rev">
+                            <rect class="ros2" x="80" y="80" width="80" height="80"/>
+                            <rect class="ros2" x="80" y="80" width="80" height="80" transform="rotate(45 120 120)"/>
+                        </g>
+                        <circle class="ros3" cx="120" cy="120" r="34"/>
+                        <g class="ros-rot-slow">
+                            <rect class="ros4" x="107" y="107" width="26" height="26"/>
+                            <rect class="ros4" x="107" y="107" width="26" height="26" transform="rotate(45 120 120)"/>
+                        </g>
+                    </svg>
+                </div>
+                <p class="eyebrow">من قلب الكرك إلى العالم</p>
+                <h1 class="hero-title" id="hero-title">حرفتنا تقنية،<br><span class="grad">وجذورنا أردنية أصيلة</span></h1>
+                <p class="lead">
+                    في «كرك كود» نصوغ مواقع وتطبيقات بدقّة نقّاش البتراء، ونُركّب تفاصيلها
+                    كفسيفساء مادبا — تصاميم سريعة وأنيقة تعمل على كل الشاشات.
+                </p>
+                <div class="hero-cta">
+                    <a class="btn btn-solid" href="#contact">ابدأ مشروعك الآن</a>
+                    <a class="btn btn-line" href="#services">استكشف خدماتنا</a>
+                </div>
+                <p class="hero-chip">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="7" y="7" width="10" height="10"/>
+                        <rect x="7" y="7" width="10" height="10" transform="rotate(45 12 12)"/>
+                    </svg>
+                    صُنع بحبٍّ في الأردن
+                </p>
+            </div>
+            <a class="scroll-cue" href="#services" aria-label="انتقل إلى قسم الخدمات">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6"/>
+                </svg>
+            </a>
+        </section>
+
+        <div class="pattern-band" aria-hidden="true"></div>
+
+        <!-- ================= الخدمات (شرائح أفقية) ================= -->
+        <section class="section" id="services" aria-labelledby="services-title">
+            <div class="container section-head reveal">
+                <p class="eyebrow">خدماتنا</p>
+                <h2 id="services-title">حرفتنا الحديثة… بذوق أجدادنا</h2>
+                <p class="section-sub">حلول رقمية متكاملة تُنسج على مقاس احتياجك، كما تُنسج البُسط على نول بيت الشعر.</p>
+            </div>
+            <div class="carousel">
+                <div class="snap-row" data-carousel>
+                    <article class="card-k">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8.5 8-4 4 4 4M15.5 8l4 4-4 4M13.2 5.5l-2.4 13"/></svg>
+                        </span>
+                        <h3 class="card-title">تطوير المواقع</h3>
+                        <p>مواقع سريعة وآمنة ومتجاوبة تُبنى بأحدث المعايير العالمية وتراعي محركات البحث من اليوم الأول.</p>
+                    </article>
+                    <article class="card-k">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M10 9.5v10"/></svg>
+                        </span>
+                        <h3 class="card-title">تصميم تجربة المستخدم</h3>
+                        <p>واجهات عربية أنيقة تُصمَّم حول احتياجات زوارك، برحلات استخدام سلسة وممتعة.</p>
+                    </article>
+                    <article class="card-k">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.3 8.5h11.4l-.9 11a1.8 1.8 0 0 1-1.8 1.6H9a1.8 1.8 0 0 1-1.8-1.6l-.9-11Z"/><path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/></svg>
+                        </span>
+                        <h3 class="card-title">المتاجر الإلكترونية</h3>
+                        <p>منصات بيع متكاملة بإدارة سهلة وبوابات دفع محلية موثوقة، تبيع لك على مدار الساعة.</p>
+                    </article>
+                    <article class="card-k">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="6.8" y="6.8" width="10.4" height="10.4"/><rect x="6.8" y="6.8" width="10.4" height="10.4" transform="rotate(45 12 12)"/></svg>
+                        </span>
+                        <h3 class="card-title">الهوية البصرية</h3>
+                        <p>شعارات وهُويات مستوحاة من زخارف تراثنا، تمنح علامتك حضوراً لا يُنسى.</p>
+                    </article>
+                </div>
+                <div class="dots" aria-hidden="false"></div>
+            </div>
+        </section>
+
+        <!-- ================= الجذور الأردنية (شرائح أفقية) ================= -->
+        <section class="section section-alt cv" id="heritage" aria-labelledby="heritage-title">
+            <div class="container section-head reveal">
+                <p class="eyebrow">جذورنا</p>
+                <h2 id="heritage-title">من صخور وطنٍ يحكي… نتعلّم الإتقان</h2>
+                <p class="section-sub">كل تفصيلة في عملنا تحمل بصمة من معالم أردننا الحبيب — من البتراء إلى مادبا.</p>
+            </div>
+            <div class="carousel">
+                <div class="snap-row" data-carousel style="--card-w:min(84vw,340px)">
+                    <article class="hcard">
+                        <div class="media">
+                            <svg class="ill" viewBox="0 0 320 200" role="img" aria-label="رسم لواجهة الخزنة في البترا">
+                                <defs><linearGradient id="sky-petra" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--ill-sky-1)"/><stop offset="1" style="stop-color:var(--ill-sky-2)"/></linearGradient></defs>
+                                <rect width="320" height="200" fill="url(#sky-petra)"/>
+                                <circle class="i-sun" cx="264" cy="46" r="17"/><circle class="i-sun-ring" cx="264" cy="46" r="25"/>
+                                <path class="i-far" d="M0 200V116Q28 88 62 106T128 100T196 114T262 98T320 110V200Z"/>
+                                <g class="i-main">
+                                    <rect x="156" y="24" width="8" height="7" rx="2"/>
+                                    <path d="M151 31h18l-4 11h-10z"/>
+                                    <path d="M116 42 116 26 154 26 154 42Z"/><path d="M204 42 166 42 166 26Z"/>
+                                    <rect x="114" y="42" width="92" height="8" rx="1.5"/>
+                                    <rect x="122" y="54" width="7" height="50" rx="2"/><rect x="140" y="54" width="7" height="50" rx="2"/>
+                                    <rect x="173" y="54" width="7" height="50" rx="2"/><rect x="191" y="54" width="7" height="50" rx="2"/>
+                                    <rect x="102" y="104" width="116" height="9" rx="2"/>
+                                    <rect x="94" y="120" width="7" height="56" rx="2"/><rect x="108" y="120" width="8" height="56" rx="2"/>
+                                    <rect x="132" y="120" width="8" height="56" rx="2"/><rect x="180" y="120" width="8" height="56" rx="2"/>
+                                    <rect x="204" y="120" width="8" height="56" rx="2"/><rect x="219" y="120" width="7" height="56" rx="2"/>
+                                </g>
+                                <path class="i-cut" d="M146 176v-36a14 14 0 0 1 28 0v36z"/>
+                                <rect class="i-ground" x="0" y="176" width="320" height="24"/>
+                            </svg>
+                        </div>
+                        <h3>البترا</h3>
+                        <p>دقّة النقش في الصخر تُلهمنا تفاصيل واجهاتٍ لا تشيخ.</p>
+                    </article>
+
+                    <article class="hcard">
+                        <div class="media">
+                            <svg class="ill" viewBox="0 0 320 200" role="img" aria-label="رسم لقلعة الكرك">
+                                <defs>
+                                    <linearGradient id="sky-karak" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--ill-sky-1)"/><stop offset="1" style="stop-color:var(--ill-sky-2)"/></linearGradient>
+                                    <pattern id="cren" width="14" height="12" patternUnits="userSpaceOnUse"><rect width="8" height="12" style="fill:var(--ill-main)"/></pattern>
+                                </defs>
+                                <rect width="320" height="200" fill="url(#sky-karak)"/>
+                                <circle class="i-sun" cx="54" cy="44" r="16"/><circle class="i-sun-ring" cx="54" cy="44" r="24"/>
+                                <path class="i-far" d="M0 200V132Q60 100 130 126T240 112T320 122V200Z"/>
+                                <rect x="28" y="100" width="264" height="12" fill="url(#cren)"/>
+                                <rect x="28" y="112" width="264" height="64" class="i-main"/>
+                                <rect x="56" y="76" width="44" height="12" fill="url(#cren)"/><rect x="56" y="88" width="44" height="88" class="i-main"/>
+                                <rect x="224" y="76" width="44" height="12" fill="url(#cren)"/><rect x="224" y="88" width="44" height="88" class="i-main"/>
+                                <line x1="78" y1="76" x2="78" y2="46" style="stroke:var(--ill-main)" stroke-width="3"/>
+                                <path class="i-sun" d="M78 46l20 6-20 7z"/>
+                                <g class="i-cut">
+                                    <rect x="70" y="104" width="5" height="16" rx="2"/><rect x="86" y="104" width="5" height="16" rx="2"/>
+                                    <rect x="238" y="104" width="5" height="16" rx="2"/><rect x="254" y="104" width="5" height="16" rx="2"/>
+                                    <rect x="150" y="128" width="5" height="14" rx="2"/><rect x="170" y="128" width="5" height="14" rx="2"/>
+                                </g>
+                                <path class="i-cut" d="M148 176v-32a14 14 0 0 1 28 0v32z"/>
+                                <rect class="i-ground" x="0" y="176" width="320" height="24"/>
+                            </svg>
+                        </div>
+                        <h3>قلعة الكرك</h3>
+                        <p>من صلابة أسوارها نتعلّم بناء بنى تحتية لا تنهار.</p>
+                    </article>
+
+                    <article class="hcard">
+                        <div class="media">
+                            <svg class="ill" viewBox="0 0 320 200" role="img" aria-label="رسم لجبال وادي رم">
+                                <defs><linearGradient id="sky-rum" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--ill-sky-1)"/><stop offset="1" style="stop-color:var(--ill-sky-2)"/></linearGradient></defs>
+                                <rect width="320" height="200" fill="url(#sky-rum)"/>
+                                <circle class="i-sun" cx="150" cy="72" r="24"/><circle class="i-sun-ring" cx="150" cy="72" r="34"/>
+                                <path class="i-far" d="M0 200V124Q48 96 108 114T218 102T320 114V200Z"/>
+                                <g class="i-main">
+                                    <path d="M-6 200V92Q6 72 22 80Q32 58 52 68Q68 54 86 72Q100 66 108 86L120 200Z"/>
+                                    <path d="M196 200 210 100Q222 78 244 88Q266 74 286 94Q304 88 314 108L326 124V200Z"/>
+                                    <path d="M134 176 158 154 182 176Z"/>
+                                </g>
+                                <path class="i-cut" d="M152 176 158 164 164 176Z"/>
+                                <rect class="i-ground" x="0" y="176" width="320" height="24"/>
+                            </svg>
+                        </div>
+                        <h3>وادي رم</h3>
+                        <p>من اتساع رمالها نستلهم أفكاراً لا تعرف الحدود.</p>
+                    </article>
+
+                    <article class="hcard">
+                        <div class="media">
+                            <svg class="ill" viewBox="0 0 320 200" role="img" aria-label="زخرفة فسيفساء مستوحاة من خارطة مادبا">
+                                <defs><pattern id="tess" width="16" height="16" patternUnits="userSpaceOnUse"><rect width="16" height="16" style="fill:var(--ill-sky-2)"/><rect x="1.5" y="1.5" width="13" height="13" style="fill:var(--ill-far)"/></pattern></defs>
+                                <rect width="320" height="200" fill="url(#tess)"/>
+                                <path class="i-river" d="M-8 152C48 118 84 176 148 138S252 88 328 116"/>
+                                <g class="i-main" transform="translate(160 78)">
+                                    <rect x="-26" y="-26" width="52" height="52"/>
+                                    <rect x="-26" y="-26" width="52" height="52" transform="rotate(45)"/>
+                                    <circle class="i-sun" r="12"/>
+                                </g>
+                                <g class="i-sun">
+                                    <rect x="36" y="30" width="11" height="11"/><rect x="120" y="40" width="11" height="11"/>
+                                    <rect x="210" y="28" width="11" height="11"/><rect x="268" y="52" width="11" height="11"/>
+                                    <rect x="242" y="150" width="11" height="11"/><rect x="48" y="150" width="11" height="11"/>
+                                </g>
+                                <rect class="i-frame" x="5" y="5" width="310" height="190"/>
+                            </svg>
+                        </div>
+                        <h3>فسيفساء مادبا</h3>
+                        <p>كما تُركَّب الفسيفساء مربعاً مربعاً، نُركّب الشيفرة سطراً سطراً.</p>
+                    </article>
+                </div>
+                <div class="dots"></div>
+            </div>
+        </section>
+
+        <!-- ================= الوعل النوبي ================= -->
+        <section class="section cv" id="ibex" aria-labelledby="ibex-title">
+            <div class="container">
+                <div class="media-frame reveal">
+                    <svg class="ill" viewBox="0 0 320 200" role="img" aria-label="رسم للوعل النوبي يقف على حافة صخرية في الجبل">
+                        <defs><linearGradient id="sky-ibex" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--ill-sky-1)"/><stop offset="1" style="stop-color:var(--ill-sky-2)"/></linearGradient></defs>
+                        <rect width="320" height="200" fill="url(#sky-ibex)"/>
+                        <circle class="i-sun" cx="54" cy="44" r="15"/><circle class="i-sun-ring" cx="54" cy="44" r="23"/>
+                        <path class="i-far" d="M0 200V118Q40 96 84 110T160 104T238 116T320 106V200Z"/>
+                        <path class="i-bird" d="M142 46q5-5 10 0M158 36q4-4 8 0"/>
+                        <path class="i-main" d="M320 148V62Q304 55 294 70L276 96Q264 112 252 148Z"/>
+                        <rect class="i-main" x="170" y="148" width="150" height="28"/>
+                        <g transform="translate(40 0)">
+                            <path class="i-horn" d="M108 83C112 68 132 60 150 66C153 67 154 70 153 73"/>
+                            <path class="i-horn" d="M105 86C105 74 121 66 137 72"/>
+                            <path class="i-main" d="M112 84l9-1-6 6z"/>
+                            <path class="i-main" d="M134 110C130 96 122 88 112 84L102 82Q96 82 97 88L102 92Q108 94 112 92C118 96 124 104 128 114Z"/>
+                            <path class="i-main" d="M126 106Q146 94 170 98Q192 94 204 106Q210 116 202 128L134 128Q124 118 126 106Z"/>
+                            <path class="i-main" d="M101 92l-2 10 8-5z"/>
+                            <path class="i-main" d="M202 104l8 3-6 6z"/>
+                            <rect class="i-main" x="134" y="124" width="5" height="24" rx="2"/>
+                            <rect class="i-main" x="146" y="126" width="5" height="22" rx="2"/>
+                            <rect class="i-main" x="184" y="126" width="5" height="22" rx="2"/>
+                            <rect class="i-main" x="196" y="124" width="5" height="24" rx="2"/>
+                            <circle class="i-cut" cx="106" cy="87" r="1.6"/>
+                        </g>
+                        <rect class="i-ground" x="0" y="176" width="320" height="24"/>
+                    </svg>
+                </div>
+
+                <div class="ibex-copy reveal">
+                    <p class="eyebrow">من تراثنا الطبيعي</p>
+                    <h2 id="ibex-title">الوعل النوبي… فارس الجبال الصخرية</h2>
+                    <p class="ibex-lead">
+                        الوعل النوبي من أبرز سكان الجبال الصخرية في منطقتنا، ويشتهر بقرنيه الطويلين المنحنيين
+                        كالمنجلة، وبحوافره الحادة المقسومة التي تمنحه توازناً مذهلاً على أضيق حواف الصخور،
+                        فيتسلق حيث لا يقف غيره.
+                    </p>
+                    <p class="ibex-lead">
+                        يقتات بالأعشاب وأوراق الشجيرات ويستمد منها رطوبته، فيصمد صيفاً طويلاً دون أن يقترب من الماء.
+                        ومن أبرز معاقله في الأردن محميتا وادي الموجب ودانا، حيث تعمل الجهات البيئية على حمايته،
+                        بعد أن صنّفه الاتحاد الدولي لصون الطبيعة (IUCN) ضمن فئة «معرّض للخطر».
+                    </p>
+
+                    <!-- الحقائق كأكورديونNative: يوفّر مساحة ويصلح لللمس -->
+                    <div class="fact-list">
+                        <details class="fact">
+                            <summary>الاسم العلمي
+                                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                            </summary>
+                            <div class="fact-b" dir="ltr">Capra nubiana</div>
+                        </details>
+                        <details class="fact">
+                            <summary>التصنيف العالمي
+                                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                            </summary>
+                            <div class="fact-b">معرّض للخطر (Vulnerable) وفق IUCN</div>
+                        </details>
+                        <details class="fact">
+                            <summary>أبرز المعاقل في الأردن
+                                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                            </summary>
+                            <div class="fact-b">محميتا وادي الموجب ودانا</div>
+                        </details>
+                        <details class="fact">
+                            <summary>أبرز الملامح
+                                <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+                            </summary>
+                            <div class="fact-b">قرون منحنية كالمنجلة، وخطىً لا تخطئ الصخر</div>
+                        </details>
+                    </div>
+                </div>
+
+                <figure class="verse-card reveal">
+                    <svg class="verse-orn" viewBox="0 0 40 40" aria-hidden="true">
+                        <rect x="13" y="13" width="14" height="14"/>
+                        <rect x="13" y="13" width="14" height="14" transform="rotate(45 20 20)"/>
+                    </svg>
+                    <blockquote class="verse-text">﴿ وَمَنْ أَحْيَاهَا فَكَأَنَّمَا أَحْيَا النَّاسَ جَمِيعًا ﴾</blockquote>
+                    <figcaption class="verse-src">سورة المائدة — الآية 32</figcaption>
+                    <p class="verse-note">دعوةٌ صادقة إلى حفظ الحياة — ومنها حماية هذا المخلوق في جبالنا.</p>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ================= دعوة للتواصل ================= -->
+        <section class="section" id="contact" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-panel reveal">
+                    <h2 id="cta-title">جاهزون لنحكي قصة علامتكم للعالم؟</h2>
+                    <a class="btn btn-gold" href="mailto:karakcode@gmail.com">احجز استشارتك المجانية</a>
+                    <div class="cta-contact">
+                        <a href="mailto:karakcode@gmail.com">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                            karakcode@gmail.com
+                        </a>
+                        <a href="https://github.com/shrideh/karakcode" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            <span dir="ltr">github.com/shrideh/karakcode</span>
+                        </a>
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.4-6.5-10a6.5 6.5 0 1 1 13 0C18.5 15.6 12 21 12 21z"/><circle cx="12" cy="10.6" r="2.3"/></svg>
+                            الأردن
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= التذييل ================= -->
+    <footer class="site-footer">
+        <div class="pattern-band" aria-hidden="true"></div>
+        <div class="container footer-grid">
+            <svg class="footer-logo" viewBox="0 0 40 40" aria-label="شعار كرك كود" role="img">
+                <rect x="12" y="12" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                <rect x="12" y="12" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" transform="rotate(45 20 20)"/>
+                <circle cx="20" cy="20" r="4" fill="currentColor"/>
+            </svg>
+            <p class="footer-tag">من قلب الأردن… نبني للمستقبل.</p>
+            <a class="f-oss" href="https://github.com/shrideh/karakcode" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                مشروع مفتوح المصدر — ساهم الآن
+            </a>
+            <div class="f-contact">
+                <h3 class="f-title">تواصل معنا</h3>
+                <a href="mailto:karakcode@gmail.com">karakcode@gmail.com</a>
+                <span>المملكة الأردنية الهاشمية</span>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© <span id="year">2026</span> — KarakCode.com · جميع الحقوق محفوظة</p>
+            <p class="footer-launch">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 2.8V6M16 2.8V6"/></svg>
+                تاريخ الإطلاق: <time datetime="2026-10-12">12/10/2026</time>
+            </p>
+            <p>Developed with ♥ by KarakCode.com</p>
+        </div>
+    </footer>
+
+    <!-- ================= شريط التنقل السفلي (منطقة الإبهام) ================= -->
+    <nav class="bottom-nav" aria-label="التنقل السريع">
+        <a class="bn-item" href="#hero" data-nav="hero">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 11 12 4l8.5 7"/><path d="M6 9.8V20h12V9.8"/></svg>
+            <span>الرئيسية</span>
+        </a>
+        <a class="bn-item" href="#services" data-nav="services">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>
+            <span>خدماتنا</span>
+        </a>
+        <a class="bn-fab" href="mailto:karakcode@gmail.com" aria-label="راسلنا عبر البريد">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m4 7.5 8 5.5 8-5.5"/></svg>
+        </a>
+        <a class="bn-item" href="#heritage" data-nav="heritage">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16M5.5 17.5h13M7 17.5V11M11 17.5V11M15 17.5V11M18.5 17.5V11M4.5 11h15L12 4z"/></svg>
+            <span>جذورنا</span>
+        </a>
+        <a class="bn-item" href="#contact" data-nav="contact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5c-1.2 0-2.4-.3-3.4-.8L5 19.5l1.3-3.6A7.5 7.5 0 1 1 20 11.5z"/></svg>
+            <span>تواصل</span>
+        </a>
+    </nav>
+
+    <script>
+    (function () {
+        "use strict";
+        var d = document, root = d.documentElement;
+        var motionOK = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        /* السنة الحالية */
+        var y = d.getElementById('year');
+        if (y) y.textContent = new Date().getFullYear();
+
+        /* التبديل بين الوضع الفاتح والداكن */
+        var tgl = d.getElementById('theme-toggle'),
+            meta = d.querySelector('meta[name="theme-color"]');
+        if (tgl) {
+            tgl.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'dark');
+            tgl.addEventListener('click', function () {
+                var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                root.setAttribute('data-theme', next);
+                try { localStorage.setItem('kc-theme', next); } catch (e) {}
+                if (meta) meta.setAttribute('content', next === 'dark' ? '#171209' : '#FAF5EC');
+                tgl.setAttribute('aria-pressed', next === 'dark');
+            });
+        }
+
+        /* إخفاء الترويسة عند النزول + شريط تقدّم القراءة */
+        var header = d.querySelector('.site-header'), lastY = window.scrollY, ticking = false;
+        function onScroll() {
+            var yy = window.scrollY, h = root.scrollHeight - window.innerHeight;
+            if (header) {
+                header.style.setProperty('--p', h > 0 ? (yy / h) * 100 + '%' : '0%');
+                if (yy > lastY + 6 && yy > 140) header.classList.add('hide');
+                else if (yy < lastY - 6 || yy <= 140) header.classList.remove('hide');
+            }
+            lastY = yy; ticking = false;
+        }
+        window.addEventListener('scroll', function () {
+            if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+        }, { passive: true });
+
+        /* الظهور التدريجي عند التمرير */
+        var reveals = d.querySelectorAll('.reveal');
+        if (motionOK && 'IntersectionObserver' in window) {
+            var revIO = new IntersectionObserver(function (es) {
+                es.forEach(function (e) {
+                    if (e.isIntersecting) { e.target.classList.add('in'); revIO.unobserve(e.target); }
+                });
+            }, { threshold: .15, rootMargin: '0px 0px -8% 0px' });
+            reveals.forEach(function (el) { revIO.observe(el); });
+        } else {
+            reveals.forEach(function (el) { el.classList.add('in'); });
+        }
+
+        /* نقاط الشرائح الأفقية (Swipe) — تُولَّد تلقائياً */
+        d.querySelectorAll('[data-carousel]').forEach(function (row) {
+            var wrap = row.parentElement.querySelector('.dots');
+            if (!wrap) return;
+            var cards = Array.prototype.slice.call(row.children);
+            var dots = cards.map(function (card, i) {
+                var b = d.createElement('button');
+                b.type = 'button';
+                b.setAttribute('aria-label', 'الانتقال إلى العنصر ' + (i + 1));
+                b.addEventListener('click', function () {
+                    card.scrollIntoView({ behavior: motionOK ? 'smooth' : 'auto', inline: 'center', block: 'nearest' });
+                });
+                wrap.appendChild(b);
+                return b;
+            });
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (es) {
+                    es.forEach(function (e) {
+                        if (e.isIntersecting) {
+                            var i = cards.indexOf(e.target);
+                            dots.forEach(function (dg, j) { dg.classList.toggle('on', j === i); });
+                        }
+                    });
+                }, { root: row, threshold: .6 });
+                cards.forEach(function (c) { io.observe(c); });
+            } else { dots[0].classList.add('on'); }
+        });
+
+        /* تفعيل عنصر التنقل السفلي حسب القسم المرئي */
+        var navLinks = Array.prototype.slice.call(d.querySelectorAll('.bn-item'));
+        var byId = {};
+        navLinks.forEach(function (l) { byId[l.getAttribute('href').slice(1)] = l; });
+        if ('IntersectionObserver' in window) {
+            var secIO = new IntersectionObserver(function (es) {
+                es.forEach(function (e) {
+                    if (e.isIntersecting && byId[e.target.id]) {
+                        navLinks.forEach(function (l) { l.classList.remove('active'); });
+                        byId[e.target.id].classList.add('active');
+                    }
+                });
+            }, { rootMargin: '-40% 0px -55% 0px' });
+            ['hero', 'services', 'heritage', 'contact'].forEach(function (id) {
+                var s = d.getElementById(id);
+                if (s) secIO.observe(s);
+            });
+        }
+    })();
+    </script>
+</body>
+</html>
