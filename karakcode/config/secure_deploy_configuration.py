@@ -4,7 +4,7 @@
 from django.conf import settings
 if not settings.DEBUG:  
     # Host Header Validation
-    ALLOWED_HOSTS = ["karakcode.com"] 
+    ALLOWED_HOSTS = ["karakcode.com", "www.karakcode.com"] 
     # https     
     SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
     SECURE_SSL_REDIRECT = True
