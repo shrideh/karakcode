@@ -152,6 +152,7 @@ from .config.django_redis_configuration import *
 from .config.email_send_configuration import *
 from .config.language_configuration import *
 from .config.secure_deploy_configuration import *
+from .config.logs_configuration import *
 # -------------------------------------------------------------------- #
 
 # -------------------------------------------------------------------- #
