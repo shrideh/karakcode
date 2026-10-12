@@ -1,13 +1,476 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="كرك كود — شركة أردنية تبني مواقع وتطبيقات تجمع أصالة التراث بإتقان التقنية.">
+    <meta property="og:title" content="KarakCode | كرك كود">
+    <meta property="og:description" content="تراثٌ يلهمنا… وتقنيةٌ تصنع مستقبلنا.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#FAF5EC">
+    <title>KarakCode | كرك كود — تراثٌ يصنع المستقبل</title>
+
+    <!-- يُنفَّذ قبل الرسم لمنع وميض المظهر الخاطئ (FOUC) -->
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem('kc-theme'); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+        document.documentElement.classList.add('js');
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.setAttribute('content', t === 'dark' ? '#171209' : '#FAF5EC');
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+    <link rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.rtl.min.css'
+          integrity='sha512-4W9f7EnJgM33kD11Ux2XNF9DSpJ7LoQXCvBNhzKTorRSyjPHmjXhHMZMafIYqYvTNWahUk2ulNsarMMLDEv4zA=='
+          crossorigin='anonymous' />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="icon" type="image/svg+xml" href="{% static 'icon/favicon.svg' %}">
 </head>
 <body>
-    <div>
-        wlc
-    </div>
+    <a class="skip-link" href="#main">تخطَّ إلى المحتوى الرئيسي</a>
+
+    <!-- ================= الشريط العلوي ================= -->
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="#hero" aria-label="كرك كود — الصفحة الرئيسية">
+                <img src="{% static 'icon/icon.svg' %}" alt="" width="40" height="40">
+                <span>كرك<em>كود</em></span>
+            </a>
+
+            <nav class="site-nav" id="site-nav" aria-label="التنقل الرئيسي">
+                <a href="#services">خدماتنا</a>
+                <a href="#heritage">جذورنا</a>
+                <a href="#stats">أرقامنا</a>
+                <a href="#voices">قالوا عنّا</a>
+                <a class="btn btn-solid btn-sm nav-cta" href="#contact">ابدأ مشروعك</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" type="button"
+                        aria-pressed="false" aria-label="التبديل بين الوضع الفاتح والداكن">
+                    <svg class="ti-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                         stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4.2"/>
+                        <path d="M12 2.8v2.2M12 19v2.2M2.8 12H5M19 12h2.2M5.4 5.4 7 7M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/>
+                    </svg>
+                    <svg class="ti-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M20.4 14.2A8.4 8.4 0 0 1 9.8 3.6a8.4 8.4 0 1 0 10.6 10.6z"/>
+                    </svg>
+                </button>
+                <a class="btn btn-solid btn-sm header-cta" href="#contact">ابدأ مشروعك</a>
+                <button class="nav-toggle" id="nav-toggle" type="button"
+                        aria-expanded="false" aria-controls="site-nav" aria-label="فتح القائمة">
+                    <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- ================= قسم البطل ================= -->
+        <section class="hero" id="hero" aria-labelledby="hero-title">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">من قلب الكرك إلى العالم</p>
+                    <h1 id="hero-title">حرفتنا تقنية،<br><span class="grad">وجذورنا أردنية أصيلة</span></h1>
+                    <p class="lead">
+                        في «كرك كود» نصوغ مواقع وتطبيقات بدقّة نقّاش البتراء، ونُركّب تفاصيلها
+                        كفسيفساء مادبا — تصاميم سريعة وأنيقة تعمل على كل الشاشات، وتحكي قصة تراثنا بلغة العصر.
+                    </p>
+                    <div class="hero-cta">
+                        <a class="btn btn-solid" href="#contact">ابدأ مشروعك الآن</a>
+                        <a class="btn btn-line" href="#services">استكشف خدماتنا</a>
+                    </div>
+                    <ul class="hero-meta">
+                        <li><b dir="ltr">120+</b> مشروعاً منجزاً</li>
+                        <li><b dir="ltr">98%</b> رضا العملاء</li>
+                        <li><b dir="ltr">8</b> سنوات من الإتقان</li>
+                    </ul>
+                </div>
+
+                <div class="hero-art">
+                    <div class="arch">
+                        <svg class="rosette" viewBox="0 0 240 240" aria-hidden="true" focusable="false">
+                            <g class="ros-rot-slow">
+                                <rect class="ros1" x="52" y="52" width="136" height="136"/>
+                                <rect class="ros1" x="52" y="52" width="136" height="136" transform="rotate(45 120 120)"/>
+                            </g>
+                            <g class="ros-rot-rev">
+                                <rect class="ros2" x="80" y="80" width="80" height="80"/>
+                                <rect class="ros2" x="80" y="80" width="80" height="80" transform="rotate(45 120 120)"/>
+                            </g>
+                            <circle class="ros3" cx="120" cy="120" r="34"/>
+                            <g class="ros-rot-slow">
+                                <rect class="ros4" x="107" y="107" width="26" height="26"/>
+                                <rect class="ros4" x="107" y="107" width="26" height="26" transform="rotate(45 120 120)"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <p class="hero-chip">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <rect x="7" y="7" width="10" height="10"/>
+                            <rect x="7" y="7" width="10" height="10" transform="rotate(45 12 12)"/>
+                        </svg>
+                        صُنع بحبٍّ في الأردن
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="pattern-band" aria-hidden="true"></div>
+
+        <!-- ================= الخدمات ================= -->
+        <section class="section" id="services" aria-labelledby="services-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">خدماتنا</p>
+                    <h2 id="services-title">حرفتنا الحديثة… بذوق أجدادنا</h2>
+                    <p class="section-sub">حلول رقمية متكاملة تُنسج على مقاس احتياجك، كما تُنسج البُسط على نول بيت الشعر.</p>
+                </div>
+
+                <div class="grid-services">
+                    <article class="card-k reveal">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m8.5 8-4 4 4 4M15.5 8l4 4-4 4M13.2 5.5l-2.4 13"/>
+                            </svg>
+                        </span>
+                        <h3 class="card-title">تطوير المواقع</h3>
+                        <p>مواقع سريعة وآمنة ومتجاوبة تُبنى بأحدث المعايير العالمية وتراعي محركات البحث من اليوم الأول.</p>
+                    </article>
+
+                    <article class="card-k reveal">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/>
+                                <path d="M3.5 9.5h17M10 9.5v10"/>
+                            </svg>
+                        </span>
+                        <h3 class="card-title">تصميم تجربة المستخدم</h3>
+                        <p>واجهات عربية أنيقة تُصمَّم حول احتياجات زوارك، برحلات استخدام سلسة وممتعة.</p>
+                    </article>
+
+                    <article class="card-k reveal">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6.3 8.5h11.4l-.9 11a1.8 1.8 0 0 1-1.8 1.6H9a1.8 1.8 0 0 1-1.8-1.6l-.9-11Z"/>
+                                <path d="M9 8.5V7a3 3 0 0 1 6 0v1.5"/>
+                            </svg>
+                        </span>
+                        <h3 class="card-title">المتاجر الإلكترونية</h3>
+                        <p>منصات بيع متكاملة بإدارة سهلة وبوابات دفع محلية موثوقة، تبيع لك على مدار الساعة.</p>
+                    </article>
+
+                    <article class="card-k reveal">
+                        <span class="card-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+                                <rect x="6.8" y="6.8" width="10.4" height="10.4"/>
+                                <rect x="6.8" y="6.8" width="10.4" height="10.4" transform="rotate(45 12 12)"/>
+                            </svg>
+                        </span>
+                        <h3 class="card-title">الهوية البصرية</h3>
+                        <p>شعارات وهُويات مستوحاة من زخارف تراثنا، تمنح علامتك حضوراً لا يُنسى.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= الجذور الأردنية ================= -->
+        <section class="section section-alt" id="heritage" aria-labelledby="heritage-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">جذورنا</p>
+                    <h2 id="heritage-title">من صخور وطنٍ يحكي… نتعلّم الإتقان</h2>
+                    <p class="section-sub">كل تفصيلة في عملنا تحمل بصمة من معالم أردننا الحبيب — من البتراء إلى مادبا.</p>
+                </div>
+
+                <div class="grid-heritage">
+                    <!-- البتراء -->
+                    <article class="hcard reveal">
+                        <div class="media">
+                            <svg class="ill" viewBox="0 0 320 200" role="img" aria-label="رسم لواجهة الخزنة في البتراء" focusable="false">
+                                <defs>
+                                    <linearGradient id="sky-petra" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" style="stop-color:var(--ill-sky-1)"/>
+                                        <stop offset="1" style="stop-color:var(--ill-sky-2)"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="320" height="200" fill="url(#sky-petra)"/>
+                                <circle class="i-sun" cx="264" cy="46" r="17"/>
+                                <circle class="i-sun-ring" cx="264" cy="46" r="25"/>
+                                <path class="i-far" d="M0 200V116Q28 88 62 106T128 100T196 114T262 98T320 110V200Z"/>
+                                <g class="i-main">
+                                    <rect x="156" y="24" width="8" height="7" rx="2"/>
+                                    <path d="M151 31h18l-4 11h-10z"/>
+                                    <path d="M116 42 116 26 154 26 154 42Z"/>
+                                    <path d="M204 42 166 42 166 26Z"/>
+                                    <rect x="114" y="42" width="92" height="8" rx="1.5"/>
+                                    <rect x="122" y="54" width="7" height="50" rx="2"/>
+                                    <rect x="140" y="54" width="7" height="50" rx="2"/>
+                                    <rect x="173" y="54" width="7" height="50" rx="2"/>
+                                    <rect x="191" y="54" width="7" height="50" rx="2"/>
+                                    <rect x="102" y="104" width="116" height="9" rx="2"/>
+                                    <rect x="94"  y="120" width="7" height="56" rx="2"/>
+                                    <rect x="108" y="120" width="8" height="56" rx="2"/>
+                                    <rect x="132" y="120" width="8" height="56" rx="2"/>
+                                    <rect x="180" y="120" width="8" height="56" rx="2"/>
+                                    <rect x="204" y="120" width="8" height="56" rx="2"/>
+                                    <rect x="219" y="120" width="7" height="56" rx="2"/>
+                                </g>
+                                <path class="i-cut" d="M146 176v-36a14 14 0 0 1 28 0v36z"/>
+                                <rect class="i-ground" x="0" y="176" width="320" height="24"/>
+                            </svg>
+                        </div>
+                        <h3>البتراء</h3>
+                        <p>دقّة النقش في الصخر تُلهمنا تفاصيل واجهاتٍ لا تشيخ.</p>
+                    </article>
+
+                    <!-- قلعة الكرك -->
+                    <article class="hcard reveal">
+                        <div class="media">
+                            <svg class="ill" viewBox="0 0 320 200" role="img" aria-label="رسم لقلعة الكرك" focusable="false">
+                                <defs>
+                                    <linearGradient id="sky-karak" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" style="stop-color:var(--ill-sky-1)"/>
+                                        <stop offset="1" style="stop-color:var(--ill-sky-2)"/>
+                                    </linearGradient>
+                                    <pattern id="cren" width="14" height="12" patternUnits="userSpaceOnUse">
+                                        <rect width="8" height="12" style="fill:var(--ill-main)"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="320" height="200" fill="url(#sky-karak)"/>
+                                <circle class="i-sun" cx="54" cy="44" r="16"/>
+                                <circle class="i-sun-ring" cx="54" cy="44" r="24"/>
+                                <path class="i-far" d="M0 200V132Q60 100 130 126T240 112T320 122V200Z"/>
+                                <rect x="28" y="100" width="264" height="12" fill="url(#cren)"/>
+                                <rect x="28" y="112" width="264" height="64" class="i-main"/>
+                                <rect x="56" y="76" width="44" height="12" fill="url(#cren)"/>
+                                <rect x="56" y="88" width="44" height="88" class="i-main"/>
+                                <rect x="224" y="76" width="44" height="12" fill="url(#cren)"/>
+                                <rect x="224" y="88" width="44" height="88" class="i-main"/>
+                                <line x1="78" y1="76" x2="78" y2="46" style="stroke:var(--ill-main)" stroke-width="3"/>
+                                <path class="i-sun" d="M78 46l20 6-20 7z"/>
+                                <g class="i-cut">
+                                    <rect x="70" y="104" width="5" height="16" rx="2"/>
+                                    <rect x="86" y="104" width="5" height="16" rx="2"/>
+                                    <rect x="238" y="104" width="5" height="16" rx="2"/>
+                                    <rect x="254" y="104" width="5" height="16" rx="2"/>
+                                    <rect x="150" y="128" width="5" height="14" rx="2"/>
+                                    <rect x="170" y="128" width="5" height="14" rx="2"/>
+                                </g>
+                                <path class="i-cut" d="M148 176v-32a14 14 0 0 1 28 0v32z"/>
+                                <rect class="i-ground" x="0" y="176" width="320" height="24"/>
+                            </svg>
+                        </div>
+                        <h3>قلعة الكرك</h3>
+                        <p>من صلابة أسوارها نتعلّم بناء بنى تحتية لا تنهار.</p>
+                    </article>
+
+                    <!-- وادي رم -->
+                    <article class="hcard reveal">
+                        <div class="media">
+                            <svg class="ill" viewBox="0 0 320 200" role="img" aria-label="رسم لجبال وادي رم" focusable="false">
+                                <defs>
+                                    <linearGradient id="sky-rum" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" style="stop-color:var(--ill-sky-1)"/>
+                                        <stop offset="1" style="stop-color:var(--ill-sky-2)"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="320" height="200" fill="url(#sky-rum)"/>
+                                <circle class="i-sun" cx="150" cy="72" r="24"/>
+                                <circle class="i-sun-ring" cx="150" cy="72" r="34"/>
+                                <path class="i-far" d="M0 200V124Q48 96 108 114T218 102T320 114V200Z"/>
+                                <g class="i-main">
+                                    <path d="M-6 200V92Q6 72 22 80Q32 58 52 68Q68 54 86 72Q100 66 108 86L120 200Z"/>
+                                    <path d="M196 200 210 100Q222 78 244 88Q266 74 286 94Q304 88 314 108L326 124V200Z"/>
+                                    <path d="M134 176 158 154 182 176Z"/>
+                                </g>
+                                <path class="i-cut" d="M152 176 158 164 164 176Z"/>
+                                <rect class="i-ground" x="0" y="176" width="320" height="24"/>
+                            </svg>
+                        </div>
+                        <h3>وادي رم</h3>
+                        <p>من اتساع رمالها نستلهم أفكاراً لا تعرف الحدود.</p>
+                    </article>
+
+                    <!-- فسيفساء مادبا -->
+                    <article class="hcard reveal">
+                        <div class="media">
+                            <svg class="ill" viewBox="0 0 320 200" role="img" aria-label="زخرفة فسيفساء مستوحاة من خارطة مادبا" focusable="false">
+                                <defs>
+                                    <pattern id="tess" width="16" height="16" patternUnits="userSpaceOnUse">
+                                        <rect width="16" height="16" style="fill:var(--ill-sky-2)"/>
+                                        <rect x="1.5" y="1.5" width="13" height="13" style="fill:var(--ill-far)"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="320" height="200" fill="url(#tess)"/>
+                                <path class="i-river" d="M-8 152C48 118 84 176 148 138S252 88 328 116"/>
+                                <g class="i-main" transform="translate(160 78)">
+                                    <rect x="-26" y="-26" width="52" height="52"/>
+                                    <rect x="-26" y="-26" width="52" height="52" transform="rotate(45)"/>
+                                    <circle class="i-sun" r="12"/>
+                                </g>
+                                <g class="i-sun">
+                                    <rect x="36" y="30" width="11" height="11"/>
+                                    <rect x="120" y="40" width="11" height="11"/>
+                                    <rect x="210" y="28" width="11" height="11"/>
+                                    <rect x="268" y="52" width="11" height="11"/>
+                                    <rect x="242" y="150" width="11" height="11"/>
+                                    <rect x="48" y="150" width="11" height="11"/>
+                                </g>
+                                <rect class="i-frame" x="5" y="5" width="310" height="190"/>
+                            </svg>
+                        </div>
+                        <h3>فسيفساء مادبا</h3>
+                        <p>كما تُركَّب الفسيفساء مربعاً مربعاً، نُركّب الشيفرة سطراً سطراً.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= الأرقام ================= -->
+        <section class="section" id="stats" aria-label="أرقامنا وإنجازاتنا">
+            <div class="container">
+                <div class="stats-panel reveal">
+                    <div class="stats-grid">
+                        <div class="stat"><b dir="ltr">120+</b><span>مشروعاً منجزاً</span></div>
+                        <div class="stat"><b dir="ltr">85+</b><span>عميلاً سعيداً</span></div>
+                        <div class="stat"><b dir="ltr">8</b><span>سنوات من الإتقان</span></div>
+                        <div class="stat"><b dir="ltr">98%</b><span>رضا العملاء</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= قالوا عنّا ================= -->
+        <section class="section section-alt" id="voices" aria-labelledby="voices-title">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">قالوا عنّا</p>
+                    <h2 id="voices-title">كلماتٌ نعتزّ بها</h2>
+                    <p class="section-sub">ثقة عملائنا أغلى ما نملك، وقصصهم أجمل ما نرويه.</p>
+                </div>
+
+                <div class="grid-voices">
+                    <figure class="vcard reveal">
+                        <blockquote class="q"><span class="q-mark" aria-hidden="true">«</span>
+                            فريق يفهم لغة التراث ويتقن لغة التقنية؛ أطلقوا لنا متجراً ضاعف مبيعاتنا خلال ثلاثة أشهر.
+                        </blockquote>
+                        <figcaption class="v-who">
+                            <span class="v-ava" aria-hidden="true">س</span>
+                            <span><span class="v-name">سارة العموشي</span><br><span class="v-role">صاحبة متجر «دُرّة الكرك»</span></span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="vcard reveal">
+                        <blockquote class="q"><span class="q-mark" aria-hidden="true">«</span>
+                            موقعنا الجديد أسرع بثلاث مرات، وهويته تحكي قصة البادية قبل أن تُقرأ كلمة واحدة.
+                        </blockquote>
+                        <figcaption class="v-who">
+                            <span class="v-ava" aria-hidden="true">م</span>
+                            <span><span class="v-name">مهند الملكي</span><br><span class="v-role">مدير ضيافة «بادية وادي رم»</span></span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="vcard reveal">
+                        <blockquote class="q"><span class="q-mark" aria-hidden="true">«</span>
+                            احترافية نادرة: التزموا بالمواعيد، وأنصتوا لنا، وسلّموا أفضل مما تخيّلنا.
+                        </blockquote>
+                        <figcaption class="v-who">
+                            <span class="v-ava" aria-hidden="true">ع</span>
+                            <span><span class="v-name">عمر التميمي</span><br><span class="v-role">مؤسس «نقش» للصناعات اليدوية</span></span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= دعوة للتواصل ================= -->
+        <section class="section" id="contact" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta-panel reveal">
+                    <h2 id="cta-title">جاهزون لنحكي قصة علامتكم للعالم؟</h2>
+                    <p>أخبرنا عن مشروعك، وسنعود إليك خلال يوم عمل واحد بخطة واضحة وعرضٍ تفصيلي — الاستشارة الأولى مجانية دائماً.</p>
+                    <a class="btn btn-gold" href="mailto:hello@karakcode.com">احجز استشارتك المجانية</a>
+                    <div class="cta-contact">
+                        <a href="tel:+962790000000">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3h2.8l1.5 3.8-2 1.5a12.8 12.8 0 0 0 6.8 6.8l1.5-2 3.8 1.5v2.8c0 1-.8 1.7-1.7 1.6C10.9 18.7 5.3 13.1 4.9 4.7 4.9 3.8 5.6 3 6.6 3z"/></svg>
+                            <span dir="ltr">+962 7 9000 0000</span>
+                        </a>
+                        <a href="mailto:hello@karakcode.com">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                            hello@karakcode.com
+                        </a>
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.4-6.5-10a6.5 6.5 0 1 1 13 0C18.5 15.6 12 21 12 21z"/><circle cx="12" cy="10.6" r="2.3"/></svg>
+                            الكرك — الأردن
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= التذييل ================= -->
+    <footer class="site-footer">
+        <div class="pattern-band" aria-hidden="true"></div>
+        <div class="container footer-grid">
+            <div class="f-brand">
+                <img class="footer-logo" src="{% static 'icon/icon.svg' %}" alt="شعار كرك كود" width="72" height="72">
+                <p class="footer-tag">من قلب الكرك… نبني للمستقبل.</p>
+            </div>
+
+            <nav class="f-links" aria-label="روابط سريعة">
+                <h3 class="f-title">روابط سريعة</h3>
+                <a href="#services">خدماتنا</a>
+                <a href="#heritage">جذورنا</a>
+                <a href="#stats">أرقامنا</a>
+                <a href="#contact">تواصل معنا</a>
+            </nav>
+
+            <div class="f-contact">
+                <h3 class="f-title">تواصل معنا</h3>
+                <a href="tel:+962790000000">+962 7 9000 0000</a>
+                <a href="mailto:hello@karakcode.com">hello@karakcode.com</a>
+                <span>الكرك — المملكة الأردنية الهاشمية</span>
+            </div>
+
+            <div class="f-social">
+                <h3 class="f-title">تابعنا</h3>
+                <div class="social-row">
+                    <a href="#" aria-label="صفحتنا على فيسبوك">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-7h2.3l.4-2.7h-2.7V9.5c0-.8.3-1.3 1.4-1.3h1.4V5.8c-.5-.1-1.2-.1-1.9-.1-1.9 0-3.3 1.2-3.3 3.4v2.2H8.5V14H11v7h2.4Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="حسابنا على إنستغرام">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.6" y="3.6" width="16.8" height="16.8" rx="4.6" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="16.9" cy="7.1" r="1.15" fill="currentColor"/></svg>
+                    </a>
+                    <a href="#" aria-label="حسابنا على إكس">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.2 4h4.3l4 5.7L17.4 4h2.5l-6.2 7.2L20.2 20h-4.3l-4.3-6.1L6.4 20H3.9l6.6-7.7L4.2 4Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="تواصل معنا عبر واتساب">
+                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.8a8.2 8.2 0 0 0-7 12.5L4 20.2l4-1a8.2 8.2 0 1 0 4-15.4Zm4.1 11.3c-.2.5-1 1-1.5 1.1-.4.1-.9.1-1.5-.1-.9-.3-2.1-.8-3.4-2-1.3-1.2-1.9-2.6-2.1-3.1-.2-.5-.2-1 .1-1.4.2-.3.5-.6.7-.8.2-.2.4-.2.6-.2h.4c.2 0 .3.1.5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3-.1.5.3.6.8 1.2 1.3 1.7.6.5 1.1.8 1.6 1 .2.1.4 0 .5-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .1 0 .5-.3 1.2Z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p class="footer-copy">© <span id="year">2025</span> — KarakCode.com · جميع الحقوق محفوظة</p>
+            <p class="footer-domain">Developed with ♥ by KarakCode.com</p>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/home.js' %}" defer></script>
 </body>
 </html>
