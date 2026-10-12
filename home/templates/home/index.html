@@ -12,19 +12,7 @@
     <title>KarakCode | كرك كود — تراثٌ يصنع المستقبل</title>
 
     <!-- يُنفَّذ قبل الرسم لمنع وميض المظهر الخاطئ (FOUC) -->
-    <script>
-      (function () {
-        var t = null;
-        try { t = localStorage.getItem('kc-theme'); } catch (e) {}
-        if (t !== 'light' && t !== 'dark') {
-          t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-        }
-        document.documentElement.setAttribute('data-theme', t);
-        document.documentElement.classList.add('js');
-        var m = document.querySelector('meta[name="theme-color"]');
-        if (m) m.setAttribute('content', t === 'dark' ? '#171209' : '#FAF5EC');
-      })();
-    </script>
+    <script src="{% static 'js/theme-init.js' %}"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
