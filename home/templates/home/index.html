@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="كرك كود — شركة أردنية تبني مواقع وتطبيقات تجمع أصالة التراث بإتقان التقنية.">
+    <meta name="description" content="كرك كود — شركة أردنية مفتوحة المصدر تبني مواقع وتطبيقات تجمع أصالة التراث بإتقان التقنية.">
     <meta property="og:title" content="KarakCode | كرك كود">
     <meta property="og:description" content="تراثٌ يلهمنا… وتقنيةٌ تصنع مستقبلنا.">
     <meta property="og:type" content="website">
@@ -51,8 +51,7 @@
             <nav class="site-nav" id="site-nav" aria-label="التنقل الرئيسي">
                 <a href="#services">خدماتنا</a>
                 <a href="#heritage">جذورنا</a>
-                <a href="#stats">أرقامنا</a>
-                <a href="#voices">قالوا عنّا</a>
+                <a href="#ibex">الوعل النوبي</a>
                 <a class="btn btn-solid btn-sm nav-cta" href="#contact">ابدأ مشروعك</a>
             </nav>
 
@@ -83,7 +82,7 @@
             <div class="container hero-grid">
                 <div class="hero-copy">
                     <p class="eyebrow">من قلب الكرك إلى العالم</p>
-                    <h1 id="hero-title">حرفتنا تقنية،<br><span class="grad">وجذورنا أردنية أصيلة</span></h1>
+                    <h1 class="hero-title" id="hero-title">حرفتنا تقنية،<br><span class="grad">وجذورنا أردنية أصيلة</span></h1>
                     <p class="lead">
                         في «كرك كود» نصوغ مواقع وتطبيقات بدقّة نقّاش البتراء، ونُركّب تفاصيلها
                         كفسيفساء مادبا — تصاميم سريعة وأنيقة تعمل على كل الشاشات، وتحكي قصة تراثنا بلغة العصر.
@@ -92,11 +91,6 @@
                         <a class="btn btn-solid" href="#contact">ابدأ مشروعك الآن</a>
                         <a class="btn btn-line" href="#services">استكشف خدماتنا</a>
                     </div>
-                    <ul class="hero-meta">
-                        <li><b dir="ltr">120+</b> مشروعاً منجزاً</li>
-                        <li><b dir="ltr">98%</b> رضا العملاء</li>
-                        <li><b dir="ltr">8</b> سنوات من الإتقان</li>
-                    </ul>
                 </div>
 
                 <div class="hero-art">
@@ -339,82 +333,106 @@
             </div>
         </section>
 
-        <!-- ================= الأرقام ================= -->
-        <section class="section" id="stats" aria-label="أرقامنا وإنجازاتنا">
+        <!-- ================= الوعل النوبي ================= -->
+        <section class="section" id="ibex" aria-labelledby="ibex-title">
             <div class="container">
-                <div class="stats-panel reveal">
-                    <div class="stats-grid">
-                        <div class="stat"><b dir="ltr">120+</b><span>مشروعاً منجزاً</span></div>
-                        <div class="stat"><b dir="ltr">85+</b><span>عميلاً سعيداً</span></div>
-                        <div class="stat"><b dir="ltr">8</b><span>سنوات من الإتقان</span></div>
-                        <div class="stat"><b dir="ltr">98%</b><span>رضا العملاء</span></div>
+                <div class="ibex-grid">
+                    <div class="ibex-media reveal">
+                        <div class="media-frame">
+                            <svg class="ill" viewBox="0 0 320 200" role="img"
+                                 aria-label="رسم للوعل النوبي يقف على حافة صخرية في الجبل" focusable="false">
+                                <defs>
+                                    <linearGradient id="sky-ibex" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" style="stop-color:var(--ill-sky-1)"/>
+                                        <stop offset="1" style="stop-color:var(--ill-sky-2)"/>
+                                    </linearGradient>
+                                </defs>
+                                <rect width="320" height="200" fill="url(#sky-ibex)"/>
+                                <circle class="i-sun" cx="54" cy="44" r="15"/>
+                                <circle class="i-sun-ring" cx="54" cy="44" r="23"/>
+                                <path class="i-far" d="M0 200V118Q40 96 84 110T160 104T238 116T320 106V200Z"/>
+                                <path class="i-bird" d="M142 46q5-5 10 0M158 36q4-4 8 0"/>
+                                <path class="i-main" d="M320 148V62Q304 55 294 70L276 96Q264 112 252 148Z"/>
+                                <rect class="i-main" x="170" y="148" width="150" height="28"/>
+                                <!-- الوعل النوبي -->
+                                <g transform="translate(40 0)">
+                                    <path class="i-horn" d="M108 83C112 68 132 60 150 66C153 67 154 70 153 73"/>
+                                    <path class="i-horn" d="M105 86C105 74 121 66 137 72"/>
+                                    <path class="i-main" d="M112 84l9-1-6 6z"/>
+                                    <path class="i-main" d="M134 110C130 96 122 88 112 84L102 82Q96 82 97 88L102 92Q108 94 112 92C118 96 124 104 128 114Z"/>
+                                    <path class="i-main" d="M126 106Q146 94 170 98Q192 94 204 106Q210 116 202 128L134 128Q124 118 126 106Z"/>
+                                    <path class="i-main" d="M101 92l-2 10 8-5z"/>
+                                    <path class="i-main" d="M202 104l8 3-6 6z"/>
+                                    <rect class="i-main" x="134" y="124" width="5" height="24" rx="2"/>
+                                    <rect class="i-main" x="146" y="126" width="5" height="22" rx="2"/>
+                                    <rect class="i-main" x="184" y="126" width="5" height="22" rx="2"/>
+                                    <rect class="i-main" x="196" y="124" width="5" height="24" rx="2"/>
+                                    <circle class="i-cut" cx="106" cy="87" r="1.6"/>
+                                </g>
+                                <rect class="i-ground" x="0" y="176" width="320" height="24"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="ibex-copy reveal">
+                        <p class="eyebrow">من تراثنا الطبيعي</p>
+                        <h2 id="ibex-title">الوعل النوبي… فارس الجبال الصخرية</h2>
+                        <p class="ibex-lead">
+                            الوعل النوبي — أو الماعز الجبلي النوبي — من أبرز سكان الجبال الصخرية في منطقتنا،
+                            ويشتهر بقرنيه الطويلين المنحنيين كالمنجلة، وبحوافره الحادة المقسومة ذات الوسائد
+                            اللزجة التي تمنحه توازناً مذهلاً على أضيق حواف الصخور، فيتسلق حيث لا يقف غيره.
+                        </p>
+                        <p class="ibex-lead">
+                            يقتات بالأعشاب وأوراق الشجيرات ويستمد منها رطوبته، فيصمد صيفاً طويلاً دون أن يقترب
+                            من الماء. ومن أبرز معاقله في الأردن محميتا وادي الموجب ودانا، حيث تعمل الجهات
+                            البيئية — وفي مقدمتها الجمعية الملكية لحماية الطبيعة — على حمايته ودعم تكاثره،
+                            بعد أن صنّفه الاتحاد الدولي لصون الطبيعة (IUCN) ضمن فئة «معرّض للخطر».
+                            وقد خلّد صيّادو البادية صوره على الصخور منذ آلاف السنين، ليظل رمزاً للعزيمة
+                            والاتزان في جبالنا.
+                        </p>
+
+                        <ul class="fact-list">
+                            <li><span class="fact-k">الاسم العلمي</span><span class="fact-v" dir="ltr">Capra nubiana</span></li>
+                            <li><span class="fact-k">التصنيف العالمي</span><span class="fact-v">معرّض للخطر (Vulnerable) وفق IUCN</span></li>
+                            <li><span class="fact-k">أبرز المعاقل في الأردن</span><span class="fact-v">محميتا وادي الموجب ودانا</span></li>
+                            <li><span class="fact-k">أبرز الملامح</span><span class="fact-v">قرون منحنية كالمنجلة، وخطىً لا تخطئ الصخر</span></li>
+                        </ul>
                     </div>
                 </div>
+
+                <!-- الآية الكريمة -->
+                <figure class="verse-card reveal">
+                    <svg class="verse-orn" viewBox="0 0 40 40" aria-hidden="true">
+                        <rect x="13" y="13" width="14" height="14"/>
+                        <rect x="13" y="13" width="14" height="14" transform="rotate(45 20 20)"/>
+                    </svg>
+                    <blockquote class="verse-text">﴿ وَمَنْ أَحْيَاهَا فَكَأَنَّمَا أَحْيَا النَّاسَ جَمِيعًا ﴾</blockquote>
+                    <figcaption class="verse-src">سورة المائدة — الآية 32</figcaption>
+                    <p class="verse-note">دعوةٌ صادقة إلى حفظ الحياة — ومنها حماية هذا المخلوق في جبالنا.</p>
+                </figure>
             </div>
         </section>
 
-        <!-- ================= قالوا عنّا ================= -->
-        <section class="section section-alt" id="voices" aria-labelledby="voices-title">
-            <div class="container">
-                <div class="section-head reveal">
-                    <p class="eyebrow">قالوا عنّا</p>
-                    <h2 id="voices-title">كلماتٌ نعتزّ بها</h2>
-                    <p class="section-sub">ثقة عملائنا أغلى ما نملك، وقصصهم أجمل ما نرويه.</p>
-                </div>
 
-                <div class="grid-voices">
-                    <figure class="vcard reveal">
-                        <blockquote class="q"><span class="q-mark" aria-hidden="true">«</span>
-                            فريق يفهم لغة التراث ويتقن لغة التقنية؛ أطلقوا لنا متجراً ضاعف مبيعاتنا خلال ثلاثة أشهر.
-                        </blockquote>
-                        <figcaption class="v-who">
-                            <span class="v-ava" aria-hidden="true">س</span>
-                            <span><span class="v-name">سارة العموشي</span><br><span class="v-role">صاحبة متجر «دُرّة الكرك»</span></span>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="vcard reveal">
-                        <blockquote class="q"><span class="q-mark" aria-hidden="true">«</span>
-                            موقعنا الجديد أسرع بثلاث مرات، وهويته تحكي قصة البادية قبل أن تُقرأ كلمة واحدة.
-                        </blockquote>
-                        <figcaption class="v-who">
-                            <span class="v-ava" aria-hidden="true">م</span>
-                            <span><span class="v-name">مهند الملكي</span><br><span class="v-role">مدير ضيافة «بادية وادي رم»</span></span>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="vcard reveal">
-                        <blockquote class="q"><span class="q-mark" aria-hidden="true">«</span>
-                            احترافية نادرة: التزموا بالمواعيد، وأنصتوا لنا، وسلّموا أفضل مما تخيّلنا.
-                        </blockquote>
-                        <figcaption class="v-who">
-                            <span class="v-ava" aria-hidden="true">ع</span>
-                            <span><span class="v-name">عمر التميمي</span><br><span class="v-role">مؤسس «نقش» للصناعات اليدوية</span></span>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
 
         <!-- ================= دعوة للتواصل ================= -->
         <section class="section" id="contact" aria-labelledby="cta-title">
             <div class="container">
                 <div class="cta-panel reveal">
                     <h2 id="cta-title">جاهزون لنحكي قصة علامتكم للعالم؟</h2>
-                    <p>أخبرنا عن مشروعك، وسنعود إليك خلال يوم عمل واحد بخطة واضحة وعرضٍ تفصيلي — الاستشارة الأولى مجانية دائماً.</p>
-                    <a class="btn btn-gold" href="mailto:hello@karakcode.com">احجز استشارتك المجانية</a>
+                    <a class="btn btn-gold" href="mailto:karakcode@gmail.com">احجز استشارتك المجانية</a>
                     <div class="cta-contact">
-                        <a href="tel:+962790000000">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.6 3h2.8l1.5 3.8-2 1.5a12.8 12.8 0 0 0 6.8 6.8l1.5-2 3.8 1.5v2.8c0 1-.8 1.7-1.7 1.6C10.9 18.7 5.3 13.1 4.9 4.7 4.9 3.8 5.6 3 6.6 3z"/></svg>
-                            <span dir="ltr">+962 7 9000 0000</span>
-                        </a>
-                        <a href="mailto:hello@karakcode.com">
+                        <a href="mailto:karakcode@gmail.com">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-                            hello@karakcode.com
+                            karakcode@gmail.com
+                        </a>
+                        <a href="https://github.com/shrideh/karakcode" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            <span dir="ltr">github.com/shrideh/karakcode</span>
                         </a>
                         <span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.4-6.5-10a6.5 6.5 0 1 1 13 0C18.5 15.6 12 21 12 21z"/><circle cx="12" cy="10.6" r="2.3"/></svg>
-                            الكرك — الأردن
+                            الأردن
                         </span>
                     </div>
                 </div>
@@ -428,45 +446,32 @@
         <div class="container footer-grid">
             <div class="f-brand">
                 <img class="footer-logo" src="{% static 'icon/icon.svg' %}" alt="شعار كرك كود" width="72" height="72">
-                <p class="footer-tag">من قلب الكرك… نبني للمستقبل.</p>
+                <p class="footer-tag">من قلب الاردن… نبني للمستقبل.</p>
+                <a class="f-oss" href="https://github.com/shrideh/karakcode" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                    مشروع مفتوح المصدر — ساهم الآن
+                </a>
             </div>
 
-            <nav class="f-links" aria-label="روابط سريعة">
-                <h3 class="f-title">روابط سريعة</h3>
-                <a href="#services">خدماتنا</a>
-                <a href="#heritage">جذورنا</a>
-                <a href="#stats">أرقامنا</a>
-                <a href="#contact">تواصل معنا</a>
-            </nav>
+
 
             <div class="f-contact">
                 <h3 class="f-title">تواصل معنا</h3>
-                <a href="tel:+962790000000">+962 7 9000 0000</a>
-                <a href="mailto:hello@karakcode.com">hello@karakcode.com</a>
-                <span>الكرك — المملكة الأردنية الهاشمية</span>
-            </div>
-
-            <div class="f-social">
-                <h3 class="f-title">تابعنا</h3>
-                <div class="social-row">
-                    <a href="#" aria-label="صفحتنا على فيسبوك">
-                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.4 21v-7h2.3l.4-2.7h-2.7V9.5c0-.8.3-1.3 1.4-1.3h1.4V5.8c-.5-.1-1.2-.1-1.9-.1-1.9 0-3.3 1.2-3.3 3.4v2.2H8.5V14H11v7h2.4Z"/></svg>
-                    </a>
-                    <a href="#" aria-label="حسابنا على إنستغرام">
-                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.6" y="3.6" width="16.8" height="16.8" rx="4.6" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="12" cy="12" r="3.9" fill="none" stroke="currentColor" stroke-width="1.9"/><circle cx="16.9" cy="7.1" r="1.15" fill="currentColor"/></svg>
-                    </a>
-                    <a href="#" aria-label="حسابنا على إكس">
-                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.2 4h4.3l4 5.7L17.4 4h2.5l-6.2 7.2L20.2 20h-4.3l-4.3-6.1L6.4 20H3.9l6.6-7.7L4.2 4Z"/></svg>
-                    </a>
-                    <a href="#" aria-label="تواصل معنا عبر واتساب">
-                        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.8a8.2 8.2 0 0 0-7 12.5L4 20.2l4-1a8.2 8.2 0 1 0 4-15.4Zm4.1 11.3c-.2.5-1 1-1.5 1.1-.4.1-.9.1-1.5-.1-.9-.3-2.1-.8-3.4-2-1.3-1.2-1.9-2.6-2.1-3.1-.2-.5-.2-1 .1-1.4.2-.3.5-.6.7-.8.2-.2.4-.2.6-.2h.4c.2 0 .3.1.5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3-.1.5.3.6.8 1.2 1.3 1.7.6.5 1.1.8 1.6 1 .2.1.4 0 .5-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .1 0 .5-.3 1.2Z"/></svg>
-                    </a>
-                </div>
+                <a href="mailto:karakcode@gmail.com">karakcode@gmail.com</a>
+                <span>المملكة الأردنية الهاشمية</span>
             </div>
         </div>
 
         <div class="container footer-bottom">
-            <p class="footer-copy">© <span id="year">2025</span> — KarakCode.com · جميع الحقوق محفوظة</p>
+            <p class="footer-copy">© <span id="year">2026</span> — KarakCode.com · جميع الحقوق محفوظة</p>
+            <p class="footer-launch">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                     stroke-linecap="round" aria-hidden="true">
+                    <rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/>
+                    <path d="M3.5 10h17M8 2.8V6M16 2.8V6"/>
+                </svg>
+                تاريخ الإطلاق: <time datetime="2026-10-12">12/10/2026</time>
+            </p>
             <p class="footer-domain">Developed with ♥ by KarakCode.com</p>
         </div>
     </footer>

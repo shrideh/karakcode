@@ -32,16 +32,15 @@
     --shadow-sm:0 4px 14px rgba(36,26,16,.08);
 
     --header-bg:rgba(250,245,236,.88);
-    --net:rgba(166,58,50,.06);   /* نقشة شبكية خفيفة */
+    --net:rgba(166,58,50,.06);
     --focus:#0A4D4A;
     --arch-line:rgba(255,255,255,.55);
 
     --cta-bg:#0B524E;
     --cta-bg-2:#083835;
-    --band-bg:#0A4D4A;           /* شريط السدو */
+    --band-bg:#0A4D4A;
     --band-c1:#D9A94F;
 
-    /* ألوان الرسوم التراثية */
     --ill-sky-1:#F9EFD8;
     --ill-sky-2:#F0CDA2;
     --ill-far:#DFC298;
@@ -50,7 +49,6 @@
     --ill-sun:#D9A94F;
     --ill-water:#2F8078;
 
-    /* متغيرات التذييل (كما كانت) */
     --footer-bg:#0A4D4A;
     --footer-text:#ffffff;
     --footer-muted:rgba(255,255,255,.8);
@@ -60,7 +58,7 @@
 [data-theme="dark"]{
     color-scheme: dark;
 
-    --bg:#171209;                /* ليل البادية */
+    --bg:#171209;
     --bg-soft:#1E1810;
     --surface:#251D12;
     --surface-2:#2C2316;
@@ -105,8 +103,6 @@
 
 /* نسخة احتياطية لمن يتصفح دون جافاسكربت: يتبع تفضيل النظام */
 @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){}
-
     :root:not([data-theme="light"]){
         color-scheme: dark;
         --bg:#171209; --bg-soft:#1E1810; --surface:#251D12; --surface-2:#2C2316;
@@ -158,7 +154,6 @@ img{ max-width:100%; }
 
 section[id]{ scroll-margin-top:92px; }
 
-/* رابط التخطي — لإمكانية الوصول بلوحة المفاتيح */
 .skip-link{
     position:fixed; inset-block-start:-100%; inset-inline-start:1rem; z-index:100;
     background:var(--primary); color:var(--on-primary);
@@ -225,7 +220,6 @@ section[id]{ scroll-margin-top:92px; }
 
 .nav-actions{ display:flex; align-items:center; gap:.55rem; }
 
-/* زر تبديل المظهر — شمس وقمر بتحوّل أنيق */
 .theme-toggle{
     position:relative; width:44px; height:44px; overflow:hidden;
     border:1px solid var(--border); border-radius:12px;
@@ -241,7 +235,6 @@ section[id]{ scroll-margin-top:92px; }
 [data-theme="dark"] .ti-moon{ opacity:1; transform:none; }
 [data-theme="dark"] .ti-sun{ opacity:0; transform:translateY(-150%) rotate(90deg); }
 
-/* زر قائمة الجوال */
 .nav-toggle{
     display:none; place-items:center; width:44px; height:44px;
     border:1px solid var(--border); border-radius:12px;
@@ -328,7 +321,6 @@ section[id]{ scroll-margin-top:92px; }
 }
 .hero-meta b{ font-family:'Reem Kufi',sans-serif; font-size:1.02rem; color:var(--primary); }
 
-/* اللوحة الزخرفية — قوس معماري + نجمة ثمانية دوّارة */
 .hero-art{ position:relative; justify-self:center; padding-bottom:26px; }
 .arch{
     position:relative; overflow:hidden;
@@ -418,7 +410,7 @@ section[id]{ scroll-margin-top:92px; }
 .card-title{ font-size:1.18rem; margin-bottom:.45rem; }
 .card-k p{ margin:0; color:var(--muted); font-size:.97rem; }
 
-/* ---------- 10) بطاقات التراث (أقواس معمارية) ---------- */
+/* ---------- 10) بطاقات التراث ---------- */
 .grid-heritage{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.6rem; }
 
 .hcard{
@@ -439,7 +431,6 @@ section[id]{ scroll-margin-top:92px; }
 .hcard h3{ text-align:center; font-size:1.2rem; margin-bottom:.3rem; }
 .hcard p{ text-align:center; color:var(--muted); font-size:.95rem; margin:0; }
 
-/* عناصر الرسوم التراثية (SVG) */
 .i-sun{ fill:var(--ill-sun); }
 .i-sun-ring{ fill:none; stroke:var(--ill-sun); stroke-width:2; opacity:.55; }
 .i-far{ fill:var(--ill-far); }
@@ -526,7 +517,7 @@ section[id]{ scroll-margin-top:92px; }
 .cta-contact a:hover{ color:var(--gold-btn); }
 .cta-contact svg{ width:19px; height:19px; opacity:.9; }
 
-/* ---------- 14) التذييل (حافظنا على أسماء الأصناف والمتغيرات) ---------- */
+/* ---------- 14) التذييل ---------- */
 .site-footer{
     background:var(--footer-bg); color:var(--footer-text);
     margin-top:clamp(3.4rem,8vw,5.5rem);
@@ -559,7 +550,7 @@ section[id]{ scroll-margin-top:92px; }
 .f-contact a{ direction:ltr; unicode-bidi:embed; }
 .f-contact span{ display:block; color:var(--footer-muted); padding-block:.26rem; }
 
-.social-row{ display:flex; gap:.7rem; }
+.social-row{ display:flex; gap:.7rem; flex-wrap:wrap; }
 .social-row a{
     width:42px; height:42px; border-radius:12px;
     display:grid; place-items:center; color:#fff;
@@ -616,3 +607,77 @@ section[id]{ scroll-margin-top:92px; }
     }
     .js .reveal{ opacity:1; transform:none; }
 }
+
+/* ---------- 17) الوعل النوبي ---------- */
+.ibex-grid{
+    display:grid; grid-template-columns:1fr 1.1fr;
+    gap:clamp(2rem,5vw,3.5rem); align-items:center;
+}
+@media (max-width:991.98px){ .ibex-grid{ grid-template-columns:1fr; } }
+
+.media-frame{
+    border-radius:999px 999px 22px 22px; overflow:hidden;
+    border:1px solid var(--border); background:var(--surface-2);
+    box-shadow:var(--shadow);
+    transition:border-color .35s ease, background-color .35s ease;
+}
+.ibex-media .ill{ display:block; width:100%; height:auto; }
+
+.ibex-lead{ color:var(--muted); margin:0 0 .9rem; }
+
+.fact-list{
+    list-style:none; margin:1.4rem 0 0; padding:0;
+    display:grid; gap:.55rem;
+}
+.fact-list li{
+    display:flex; gap:.7rem; align-items:baseline; flex-wrap:wrap;
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:14px; padding:.6rem 1rem; box-shadow:var(--shadow-sm);
+    transition:background-color .35s ease, border-color .35s ease;
+}
+.fact-k{ white-space:nowrap; font-weight:800; color:var(--primary); }
+.fact-v{ color:var(--muted); }
+
+.verse-card{
+    position:relative; overflow:hidden;
+    margin:clamp(2.4rem,5vw,3.4rem) auto 0; max-width:860px; text-align:center;
+    background:linear-gradient(140deg,var(--accent-soft),var(--primary-soft));
+    border:1px solid var(--border); border-radius:26px;
+    padding:clamp(2rem,5vw,2.8rem) clamp(1.4rem,4vw,2.6rem);
+    transition:border-color .35s ease;
+}
+.verse-card::before,.verse-card::after{
+    content:""; position:absolute; top:18px; width:9px; height:9px;
+    background:var(--gold); transform:rotate(45deg); opacity:.55;
+}
+.verse-card::before{ right:18px; }
+.verse-card::after{ left:18px; }
+.verse-orn{ display:block; width:32px; height:32px; margin:0 auto 1rem; fill:var(--gold); }
+.verse-text{
+    margin:0 0 .7rem; color:var(--heading);
+    font-family:'Reem Kufi','Tajawal',sans-serif;
+    font-size:clamp(1.35rem,1.05rem + 1.4vw,1.95rem); line-height:2;
+}
+.verse-src{ margin:0; font-weight:700; font-size:.98rem; color:var(--gold-strong); }
+.verse-note{ margin:.8rem auto 0; max-width:52ch; font-size:.92rem; color:var(--muted); }
+
+.i-horn{ fill:none; stroke:var(--ill-main); stroke-width:5; stroke-linecap:round; }
+.i-bird{ fill:none; stroke:var(--ill-main); stroke-width:2; stroke-linecap:round; }
+
+.footer-launch{
+    margin:0; display:inline-flex; align-items:center; gap:.45rem;
+    font-size:.92rem; color:var(--footer-muted);
+}
+.footer-launch svg{ width:16px; height:16px; }
+
+/* ---------- 18) شارة المصدر المفتوح ---------- */
+.f-oss{
+    display:inline-flex; align-items:center; gap:.5rem;
+    margin-top:1rem; padding:.5rem .95rem;
+    border:1px solid rgba(255,255,255,.22); border-radius:999px;
+    color:var(--footer-muted); text-decoration:none;
+    font-size:.88rem; font-weight:600;
+    transition:background-color .25s ease, color .25s ease, transform .25s ease;
+}
+.f-oss:hover{ background:rgba(255,255,255,.1); color:#fff; transform:translateY(-2px); }
+.f-oss svg{ width:17px; height:17px; }
